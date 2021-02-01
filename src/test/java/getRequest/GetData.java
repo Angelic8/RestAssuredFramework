@@ -3,28 +3,28 @@ package getRequest;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-import io.restassured.RestAssured;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import java.math.BigDecimal;
 import java.util.*;
 
-import io.restassured.path.json.JsonPath;
-
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeAll;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.util.Strings;
+import io.restassured.response.ResponseBody;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import static org.hamcrest.MatcherAssert.assertThat;
+import java.math.BigDecimal;
+import org.hamcrest.MatcherAssert;
 
 public class GetData {
 
+    public static RegexStrings regexStringsObj;
+
     @BeforeAll
-    public void setupAPI(){
+    public void setupAPI() {
 
         baseURI = "http://api.openweathermap.org/data/2.5/find?q=London&appid=7eb8c4ae0df682ffe32eed392b2fc5e4";
 
@@ -58,13 +58,15 @@ public class GetData {
         listCountry.add("US");
         listCountry.add("US");
 
-
         Assert.assertEquals(200, statusCode);
-        Assert.assertEquals("London", resp.jsonPath().getString("list.name[0]"));
-        Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 9.77);
-        Assert.assertEquals(resp.jsonPath().getString("list.sys.country"),listCountry.toString());
+        Assert.assertEquals(resp.jsonPath().getString("list.name[0]"), "London");
+        Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 2.57);
+        Assert.assertEquals(resp.jsonPath().getString("list.sys.country"), listCountry.toString());
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].main").replaceAll(regexStringsObj.regexSymbols,""), "Haze");
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].description").replaceAll(regexStringsObj.regexSymbols,""), "haze");
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].icon").replaceAll(regexStringsObj.regexSymbols, ""), "50d");
 
-
+        
         System.out.println("Response Time: " + respTime);
         System.out.println(resp.jsonPath().prettyPrint());
 
