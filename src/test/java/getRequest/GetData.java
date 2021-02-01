@@ -58,13 +58,25 @@ public class GetData {
         listCountry.add("US");
         listCountry.add("US");
 
+        ArrayList<Integer> listID = new ArrayList<Integer>();
+        listID.add(2643743);
+        listID.add(6058560);
+        listID.add(4517009);
+        listID.add(4298960);
+        listID.add(5367815);
+
+        String listIDToString = listID.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
         Assert.assertEquals(200, statusCode);
         Assert.assertEquals(resp.jsonPath().getString("list.name[0]"), "London");
-        Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 2.57);
+        Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 3.6);
         Assert.assertEquals(resp.jsonPath().getString("list.sys.country"), listCountry.toString());
-        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].main").replaceAll(regexStringsObj.regexSymbols,""), "Haze");
-        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].description").replaceAll(regexStringsObj.regexSymbols,""), "haze");
-        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].icon").replaceAll(regexStringsObj.regexSymbols, ""), "50d");
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].main").replaceAll(regexStringsObj.regexSymbols,""), "Clouds");
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].description").replaceAll(regexStringsObj.regexSymbols,""), "overcast clouds");
+        Assert.assertEquals(resp.jsonPath().getString("list.weather[0].icon").replaceAll(regexStringsObj.regexSymbols, ""), "04d");
+        Assert.assertEquals(resp.jsonPath().getString("list.id").replaceAll(regexStringsObj.regexSymbols, ""),listIDToString);
+
+
 
         
         System.out.println("Response Time: " + respTime);
