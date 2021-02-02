@@ -24,7 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="20df3668-083b-40e0-8ced-f16c88501253" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/getRequest/GetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/getRequest/GetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/getRequest/RegexStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/getRequest/RegexStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/getRequest/GetData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/getRequest/GetData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/getRequest/RegexStrings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/getRequest/RegexStrings.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,37 +165,37 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1366.728@0.0.1366.728" timestamp="1612175347912" />
-    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611912572096">
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1612247474579">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1611912572096" />
+    <state x="363" y="99" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1612247474579" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1611894335703">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611894335703" />
-    <state width="1323" height="232" key="GridCell.Tab.0.bottom" timestamp="1612175827337">
+    <state width="1323" height="232" key="GridCell.Tab.0.bottom" timestamp="1612263052857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="232" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612175827337" />
-    <state width="1323" height="232" key="GridCell.Tab.0.center" timestamp="1612175827332">
+    <state width="1323" height="232" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612263052857" />
+    <state width="1323" height="232" key="GridCell.Tab.0.center" timestamp="1612263052857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="232" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612175827332" />
-    <state width="1323" height="232" key="GridCell.Tab.0.left" timestamp="1612175827332">
+    <state width="1323" height="232" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612263052857" />
+    <state width="1323" height="232" key="GridCell.Tab.0.left" timestamp="1612263052857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="232" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612175827332" />
-    <state width="1323" height="232" key="GridCell.Tab.0.right" timestamp="1612175827337">
+    <state width="1323" height="232" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612263052857" />
+    <state width="1323" height="232" key="GridCell.Tab.0.right" timestamp="1612263052857">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="232" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612175827337" />
+    <state width="1323" height="232" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612263052857" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1611830954473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611830954473" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612169367786">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612252963557">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1612169367786" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1612252963557" />
   </component>
 </project>
