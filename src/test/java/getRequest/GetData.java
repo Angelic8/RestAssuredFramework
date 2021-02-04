@@ -12,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;
 
+import javax.swing.*;
+
 public class GetData {
 
     public static RegexStrings regexStringsObj;
@@ -208,7 +210,7 @@ public class GetData {
         int size;
         ArrayList<String> circuitIDs, circuitName, locality, country;
         ArrayList<Double> longLocation, latLocation;
-        String circuitIDToString, circuitNameToString, latToString, longToString, localityToString, countryToString;
+        String circuitIDToString, circuitNameToString, latToString, longToString, localityToString, countryToString, circuitsCircID, circuitsCircName, circuitsLocationLat, circuitsLocationLong, circuitsLocationLocality, circuitsLocationCountry;
 
         resp = given().get("http://ergast.com/api/f1/2017/circuits.json");
         //resp.then().log().all();
@@ -355,21 +357,28 @@ public class GetData {
         country.add("UAE");
         countryToString = country.toString().replaceAll(regexStringsObj.regexSymbols, "");
 
+        circuitsCircID = jPath.getString("MRData.CircuitTable.Circuits.circuitId");
+        circuitsCircName = jPath.getString("MRData.CircuitTable.Circuits.circuitName");
+        circuitsLocationLat = jPath.getString("MRData.CircuitTable.Circuits.Location.lat");
+        circuitsLocationLong = jPath.getString("MRData.CircuitTable.Circuits.Location.long");
+        circuitsLocationLocality = jPath.getString("MRData.CircuitTable.Circuits.Location.locality");
+        circuitsLocationCountry = jPath.getString("MRData.CircuitTable.Circuits.Location.country");
+
         for (int i=0; i<1; i++){
 
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.circuitId").replaceAll(regexStringsObj.regexSymbols, ""),circuitIDToString);
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.circuitName").replaceAll(regexStringsObj.regexSymbols, ""),circuitNameToString);
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.lat").replaceAll(regexStringsObj.regexSymbols, ""), latToString);
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.long").replaceAll(regexStringsObj.regexSymbols, ""), longToString);
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.locality").replaceAll(regexStringsObj.regexSymbols, ""), localityToString);
-            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.country").replaceAll(regexStringsObj.regexSymbols, ""), countryToString);
+            Assert.assertEquals(circuitsCircID.replaceAll(regexStringsObj.regexSymbols, ""),circuitIDToString);
+            Assert.assertEquals(circuitsCircName.replaceAll(regexStringsObj.regexSymbols, ""),circuitNameToString);
+            Assert.assertEquals(circuitsLocationLat.replaceAll(regexStringsObj.regexSymbols, ""), latToString);
+            Assert.assertEquals(circuitsLocationLong.replaceAll(regexStringsObj.regexSymbols, ""), longToString);
+            Assert.assertEquals(circuitsLocationLocality.replaceAll(regexStringsObj.regexSymbols, ""), localityToString);
+            Assert.assertEquals(circuitsLocationCountry.replaceAll(regexStringsObj.regexSymbols, ""), countryToString);
 
-            System.out.println("\nCircuit ID: " + jPath.getString("MRData.CircuitTable.Circuits.circuitId").replaceAll(regexStringsObj.regexSymbols, ""));
-            System.out.println("Circuit Name: " + jPath.getString("MRData.CircuitTable.Circuits.circuitName").replaceAll(regexStringsObj.regexSymbols, ""));
-            System.out.println("Location's Latitude: " + jPath.getString("MRData.CircuitTable.Circuits.Location.lat").replaceAll(regexStringsObj.regexSymbols, ""));
-            System.out.println("Location's Longitude: " + jPath.getString("MRData.CircuitTable.Circuits.Location.long").replaceAll(regexStringsObj.regexSymbols, ""));
-            System.out.println("Location's Locality: " + jPath.getString("MRData.CircuitTable.Circuits.Location.locality").replaceAll(regexStringsObj.regexSymbols, ""));
-            System.out.println("Country: " + jPath.getString("MRData.CircuitTable.Circuits.Location.country").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("\nCircuit ID: " + circuitsCircID.replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Circuit Name: " + circuitsCircName.replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Latitude: " + circuitsLocationLat.replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Longitude: " + circuitsLocationLong.replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Locality: " + circuitsLocationLocality.replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Country: " + circuitsLocationCountry.replaceAll(regexStringsObj.regexSymbols, ""));
 
         } // end for-loop
 
