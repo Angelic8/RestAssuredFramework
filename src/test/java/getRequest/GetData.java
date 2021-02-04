@@ -18,9 +18,16 @@ public class GetData {
     protected static Response resp;
     protected static JsonPath jPath;
 
-    /*
+/*
         @Test(priority = 1)
         public void testResponseHourlyForecast() {
+
+            Map jsonAsMap;
+            int statusCode;
+            long respTime;
+            ArrayList<String> listCountry;
+            ArrayList<Integer> listID;
+            String listIDToString;
 
             // Rest Assured - assertThat()
             resp = given()
@@ -37,26 +44,24 @@ public class GetData {
                     .assertThat().body("list.wind[0].speed", equalTo(5.14f))
                     .extract().response();
 
-            // AssertEquals()
-            Map jsonAsMap = new HashMap<>();
-            int statusCode = resp.getStatusCode();
-            long respTime = resp.getTime();
+            jsonAsMap = new HashMap<>();
+            statusCode = resp.getStatusCode();
+            respTime = resp.getTime();
 
-            ArrayList<String> listCountry = new ArrayList<String>();
+            listCountry = new ArrayList<String>();
             listCountry.add("GB");
             listCountry.add("CA");
             listCountry.add("US");
             listCountry.add("US");
             listCountry.add("US");
 
-            ArrayList<Integer> listID = new ArrayList<Integer>();
+            listID = new ArrayList<Integer>();
             listID.add(2643743);
             listID.add(6058560);
             listID.add(4517009);
             listID.add(4298960);
             listID.add(5367815);
-
-            String listIDToString = listID.toString().replaceAll(regexStringsObj.regexSymbols, "");
+            listIDToString = listID.toString().replaceAll(regexStringsObj.regexSymbols, "");
 
             Assert.assertEquals(200, statusCode);
             Assert.assertEquals(resp.jsonPath().getString("list.id").replaceAll(regexStringsObj.regexSymbols, ""), listIDToString);
@@ -74,7 +79,7 @@ public class GetData {
             System.out.println(resp.jsonPath().prettyPrint());
 
         } // end method testResponseHourlyForecast()
-    *//*
+*/ /*
     @Test(priority = 2)
     public void testResponseCodeOfFrance() {
 
@@ -94,7 +99,7 @@ public class GetData {
                 .extract().response();
 
     } // end method testResponseFiveDayForecast()
-*//*
+*/ /*
     @Test(priority = 3)
     public void testLoopResponseCode() {
 
@@ -124,6 +129,11 @@ public class GetData {
     @Test(priority = 1)
     public void testReqresResponseCode() {
 
+        String dataIDToString, datasEmailToString, dataFnameToString, dataLnameToString;
+        int size;
+        ArrayList<Integer> dataID;
+        ArrayList<String> dataFname, dataLname, datasEmail;
+
         // Get the endpoint's URL
         resp = given().get("https://reqres.in/api/users?page=2");
         resp.then()
@@ -134,46 +144,46 @@ public class GetData {
         jPath = new JsonPath(resp.asString());
 
         // Get the size of the endpoint
-        int size = jPath.getInt("data.size()");
+        size = jPath.getInt("data.size()");
         System.out.println("API's size is: " + size);
 
         // Create an arraylist for assertEquals
-        ArrayList<Integer> dataID = new ArrayList<Integer>();
+        dataID = new ArrayList<Integer>();
         dataID.add(7);
         dataID.add(8);
         dataID.add(9);
         dataID.add(10);
         dataID.add(11);
         dataID.add(12);
-        // Convert the Arraylist; Replace regex symbols to String - endpoint for assertion is a String not an integer
-        String dataIDToString = dataID.toString().replaceAll(regexStringsObj.regexSymbols,"");
+        // Convert the Arraylist; Replace regex symbols with String - endpoint for assertion is a String not an integer
+        dataIDToString = dataID.toString().replaceAll(regexStringsObj.regexSymbols,"");
 
-        ArrayList<String> datasEmail = new ArrayList<String>();
+        datasEmail = new ArrayList<String>();
         datasEmail.add("michael.lawson@reqres.in");
         datasEmail.add("lindsay.ferguson@reqres.in");
         datasEmail.add("tobias.funke@reqres.in");
         datasEmail.add("byron.fields@reqres.in");
         datasEmail.add("george.edwards@reqres.in");
         datasEmail.add("rachel.howell@reqres.in");
-        String datasEmailToString = datasEmail.toString().replaceAll(regexStringsObj.regexSymbols,"");
+        datasEmailToString = datasEmail.toString().replaceAll(regexStringsObj.regexSymbols,"");
 
-        ArrayList<String> dataFname = new ArrayList<String>();
+        dataFname = new ArrayList<String>();
         dataFname.add("Michael");
         dataFname.add("Lindsay");
         dataFname.add("Tobias");
         dataFname.add("Byron");
         dataFname.add("George");
         dataFname.add("Rachel");
-        String dataFnameToString = dataFname.toString().replaceAll(regexStringsObj.regexSymbols,"");
+        dataFnameToString = dataFname.toString().replaceAll(regexStringsObj.regexSymbols,"");
 
-        ArrayList<String> dataLname = new ArrayList<String>();
+        dataLname = new ArrayList<String>();
         dataLname.add("Lawson");
         dataLname.add("Ferguson");
         dataLname.add("Funke");
         dataLname.add("Fields");
         dataLname.add("Edwards");
         dataLname.add("Howell");
-        String dataLnameToString = dataLname.toString().replaceAll(regexStringsObj.regexSymbols,"");
+        dataLnameToString = dataLname.toString().replaceAll(regexStringsObj.regexSymbols,"");
 
         // Loop through the endpoint's array; do assertions and print for display
         for(int i=0; i<6; i++){
