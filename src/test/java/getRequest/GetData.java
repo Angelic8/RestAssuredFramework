@@ -18,68 +18,68 @@ public class GetData {
     protected static Response resp;
     protected static JsonPath jPath;
 
-/*
-        @Test(priority = 1)
-        public void testResponseHourlyForecast() {
+    /*
+            @Test(priority = 1)
+            public void testResponseHourlyForecast() {
 
-            Map jsonAsMap;
-            int statusCode;
-            long respTime;
-            ArrayList<String> listCountry;
-            ArrayList<Integer> listID;
-            String listIDToString;
+                Map jsonAsMap;
+                int statusCode;
+                long respTime;
+                ArrayList<String> listCountry;
+                ArrayList<Integer> listID;
+                String listIDToString;
 
-            // Rest Assured - assertThat()
-            resp = given()
-                    .contentType(ContentType.JSON)
-                    .param("postId", "2")
-                    .when()
-                    .get("http://api.openweathermap.org/data/2.5/find?q=London&appid=7eb8c4ae0df682ffe32eed392b2fc5e4")
-                    .then()
-                    .assertThat().statusCode(200)
-                    .assertThat().body("list.name[0]", equalTo("London"))
-                    .assertThat().body("list.sys.country", hasItems("GB", "CA", "US", "US", "US"))
-                    .assertThat().body("list.id[0]", equalTo(2643743))
-                    .assertThat().body("list.main[0].temp", equalTo(282.03f))
-                    .assertThat().body("list.wind[0].speed", equalTo(5.14f))
-                    .extract().response();
+                // Rest Assured - assertThat()
+                resp = given()
+                        .contentType(ContentType.JSON)
+                        .param("postId", "2")
+                        .when()
+                        .get("http://api.openweathermap.org/data/2.5/find?q=London&appid=7eb8c4ae0df682ffe32eed392b2fc5e4")
+                        .then()
+                        .assertThat().statusCode(200)
+                        .assertThat().body("list.name[0]", equalTo("London"))
+                        .assertThat().body("list.sys.country", hasItems("GB", "CA", "US", "US", "US"))
+                        .assertThat().body("list.id[0]", equalTo(2643743))
+                        .assertThat().body("list.main[0].temp", equalTo(282.03f))
+                        .assertThat().body("list.wind[0].speed", equalTo(5.14f))
+                        .extract().response();
 
-            jsonAsMap = new HashMap<>();
-            statusCode = resp.getStatusCode();
-            respTime = resp.getTime();
+                jsonAsMap = new HashMap<>();
+                statusCode = resp.getStatusCode();
+                respTime = resp.getTime();
 
-            listCountry = new ArrayList<String>();
-            listCountry.add("GB");
-            listCountry.add("CA");
-            listCountry.add("US");
-            listCountry.add("US");
-            listCountry.add("US");
+                listCountry = new ArrayList<String>();
+                listCountry.add("GB");
+                listCountry.add("CA");
+                listCountry.add("US");
+                listCountry.add("US");
+                listCountry.add("US");
 
-            listID = new ArrayList<Integer>();
-            listID.add(2643743);
-            listID.add(6058560);
-            listID.add(4517009);
-            listID.add(4298960);
-            listID.add(5367815);
-            listIDToString = listID.toString().replaceAll(regexStringsObj.regexSymbols, "");
+                listID = new ArrayList<Integer>();
+                listID.add(2643743);
+                listID.add(6058560);
+                listID.add(4517009);
+                listID.add(4298960);
+                listID.add(5367815);
+                listIDToString = listID.toString().replaceAll(regexStringsObj.regexSymbols, "");
 
-            Assert.assertEquals(200, statusCode);
-            Assert.assertEquals(resp.jsonPath().getString("list.id").replaceAll(regexStringsObj.regexSymbols, ""), listIDToString);
-            Assert.assertEquals(resp.jsonPath().getString("list.name[0]"), "London");
-            Assert.assertEquals(resp.jsonPath().getDouble("list.coord[0].lat"), 51.5085);
-            Assert.assertEquals(resp.jsonPath().getInt("list.main[0].humidity"), 87);
-            Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 3.6);
-            Assert.assertEquals(resp.jsonPath().getString("list.sys.country"), listCountry.toString());
-            Assert.assertEquals(resp.jsonPath().getInt("list.clouds[0].all"), 90);
-            Assert.assertEquals(resp.jsonPath().getString("list.weather[0].main").replaceAll(regexStringsObj.regexSymbols, ""), "Clouds");
-            Assert.assertEquals(resp.jsonPath().getString("list.weather[0].description").replaceAll(regexStringsObj.regexSymbols, ""), "overcast clouds");
-            Assert.assertEquals(resp.jsonPath().getString("list.weather[0].icon").replaceAll(regexStringsObj.regexSymbols, ""), "04d");
+                Assert.assertEquals(200, statusCode);
+                Assert.assertEquals(resp.jsonPath().getString("list.id").replaceAll(regexStringsObj.regexSymbols, ""), listIDToString);
+                Assert.assertEquals(resp.jsonPath().getString("list.name[0]"), "London");
+                Assert.assertEquals(resp.jsonPath().getDouble("list.coord[0].lat"), 51.5085);
+                Assert.assertEquals(resp.jsonPath().getInt("list.main[0].humidity"), 87);
+                Assert.assertEquals(resp.jsonPath().getDouble("list.wind[0].speed"), 3.6);
+                Assert.assertEquals(resp.jsonPath().getString("list.sys.country"), listCountry.toString());
+                Assert.assertEquals(resp.jsonPath().getInt("list.clouds[0].all"), 90);
+                Assert.assertEquals(resp.jsonPath().getString("list.weather[0].main").replaceAll(regexStringsObj.regexSymbols, ""), "Clouds");
+                Assert.assertEquals(resp.jsonPath().getString("list.weather[0].description").replaceAll(regexStringsObj.regexSymbols, ""), "overcast clouds");
+                Assert.assertEquals(resp.jsonPath().getString("list.weather[0].icon").replaceAll(regexStringsObj.regexSymbols, ""), "04d");
 
-            System.out.println("Response Time: " + respTime);
-            System.out.println(resp.jsonPath().prettyPrint());
+                System.out.println("Response Time: " + respTime);
+                System.out.println(resp.jsonPath().prettyPrint());
 
-        } // end method testResponseHourlyForecast()
-*/ /*
+            } // end method testResponseHourlyForecast()
+    */ /*
     @Test(priority = 2)
     public void testResponseCodeOfFrance() {
 
@@ -125,7 +125,7 @@ public class GetData {
         }
 
     } // end method testLoopResponseCode()
-*/
+*/ /*
     @Test(priority = 1)
     public void testReqresResponseCode() {
 
@@ -201,5 +201,178 @@ public class GetData {
         } // end for-loop
 
     } // end method
+*/
+    @Test(priority = 1)
+    public void testCircuitsResponseCode() {
+
+        int size;
+        ArrayList<String> circuitIDs, circuitName, locality, country;
+        ArrayList<Double> longLocation, latLocation;
+        String circuitIDToString, circuitNameToString, latToString, longToString, localityToString, countryToString;
+
+        resp = given().get("http://ergast.com/api/f1/2017/circuits.json");
+        //resp.then().log().all();
+
+        jPath = new JsonPath(resp.asString());
+        size = jPath.getInt("MRData.CircuitTable.Circuits.size()");
+        System.out.println("API's size: " + size);
+
+        circuitIDs = new ArrayList<String>();
+        circuitIDs.add("albert_park");
+        circuitIDs.add("americas");
+        circuitIDs.add("bahrain");
+        circuitIDs.add("BAK");
+        circuitIDs.add("catalunya");
+        circuitIDs.add("hungaroring");
+        circuitIDs.add("interlagos");
+        circuitIDs.add("marina_bay");
+        circuitIDs.add("monaco");
+        circuitIDs.add("monza");
+        circuitIDs.add("red_bull_ring");
+        circuitIDs.add("rodriguez");
+        circuitIDs.add("sepang");
+        circuitIDs.add("shanghai");
+        circuitIDs.add("silverstone");
+        circuitIDs.add("sochi");
+        circuitIDs.add("spa");
+        circuitIDs.add("suzuka");
+        circuitIDs.add("villeneuve");
+        circuitIDs.add("yas_marina");
+        circuitIDToString = circuitIDs.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        circuitName = new ArrayList<String>();
+        circuitName.add("Albert Park Grand Prix Circuit");
+        circuitName.add("Circuit of the Americas");
+        circuitName.add("Bahrain International Circuit");
+        circuitName.add("Baku City Circuit");
+        circuitName.add("Circuit de Barcelona-Catalunya");
+        circuitName.add("Hungaroring");
+        circuitName.add("Autódromo José Carlos Pace");
+        circuitName.add("Marina Bay Street Circuit");
+        circuitName.add("Circuit de Monaco");
+        circuitName.add("Autodromo Nazionale di Monza");
+        circuitName.add("Red Bull Ring");
+        circuitName.add("Autódromo Hermanos Rodríguez");
+        circuitName.add("Sepang International Circuit");
+        circuitName.add("Shanghai International Circuit");
+        circuitName.add("Silverstone Circuit");
+        circuitName.add("Sochi Autodrom");
+        circuitName.add("Circuit de Spa-Francorchamps");
+        circuitName.add("Suzuka Circuit");
+        circuitName.add("Circuit Gilles Villeneuve");
+        circuitName.add("Yas Marina Circuit");
+        circuitNameToString = circuitName.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        latLocation = new ArrayList<Double>();
+        latLocation.add(-37.8497);
+        latLocation.add(30.1328);
+        latLocation.add(26.0325);
+        latLocation.add(40.3725);
+        latLocation.add(41.57);
+        latLocation.add(47.5789);
+        latLocation.add(-23.7036);
+        latLocation.add(1.2914);
+        latLocation.add(43.7347);
+        latLocation.add(45.6156);
+        latLocation.add(47.2197);
+        latLocation.add(19.4042);
+        latLocation.add(2.76083);
+        latLocation.add(31.3389);
+        latLocation.add(52.0786);
+        latLocation.add(43.4057);
+        latLocation.add(50.4372);
+        latLocation.add(34.8431);
+        latLocation.add(45.5);
+        latLocation.add(24.4672);
+        latToString = latLocation.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        longLocation = new ArrayList<Double>();
+        longLocation.add(144.968);
+        longLocation.add(-97.6411);
+        longLocation.add(50.5106);
+        longLocation.add(49.8533);
+        longLocation.add(2.26111);
+        longLocation.add(19.2486);
+        longLocation.add(-46.6997);
+        longLocation.add(103.864);
+        longLocation.add(7.42056);
+        longLocation.add(9.28111);
+        longLocation.add(14.7647);
+        longLocation.add(-99.0907);
+        longLocation.add(101.738);
+        longLocation.add(121.22);
+        longLocation.add(-1.01694);
+        longLocation.add(39.9578);
+        longLocation.add(5.97139);
+        longLocation.add(136.541);
+        longLocation.add(-73.5228);
+        longLocation.add(54.6031);
+        longToString = longLocation.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        locality = new ArrayList<String>();
+        locality.add("Melbourne");
+        locality.add("Austin");
+        locality.add("Sakhir");
+        locality.add("Baku");
+        locality.add("Montmeló");
+        locality.add("Budapest");
+        locality.add("São Paulo");
+        locality.add("Marina Bay");
+        locality.add("Monte-Carlo");
+        locality.add("Monza");
+        locality.add("Spielburg");
+        locality.add("Mexico City");
+        locality.add("Kuala Lumpur");
+        locality.add("Shanghai");
+        locality.add("Silverstone");
+        locality.add("Sochi");
+        locality.add("Spa");
+        locality.add("Suzuka");
+        locality.add("Montreal");
+        locality.add("Abu Dhabi");
+        localityToString = locality.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        country = new ArrayList<String>();
+        country.add("Australia");
+        country.add("USA");
+        country.add("Bahrain");
+        country.add("Azerbaijan");
+        country.add("Spain");
+        country.add("Hungary");
+        country.add("Brazil");
+        country.add("Singapore");
+        country.add("Monaco");
+        country.add("Italy");
+        country.add("Austria");
+        country.add("Mexico");
+        country.add("Malaysia");
+        country.add("China");
+        country.add("UK");
+        country.add("Russia");
+        country.add("Belgium");
+        country.add("Japan");
+        country.add("Canada");
+        country.add("UAE");
+        countryToString = country.toString().replaceAll(regexStringsObj.regexSymbols, "");
+
+        for (int i=0; i<1; i++){
+
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.circuitId").replaceAll(regexStringsObj.regexSymbols, ""),circuitIDToString);
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.circuitName").replaceAll(regexStringsObj.regexSymbols, ""),circuitNameToString);
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.lat").replaceAll(regexStringsObj.regexSymbols, ""), latToString);
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.long").replaceAll(regexStringsObj.regexSymbols, ""), longToString);
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.locality").replaceAll(regexStringsObj.regexSymbols, ""), localityToString);
+            Assert.assertEquals(jPath.getString("MRData.CircuitTable.Circuits.Location.country").replaceAll(regexStringsObj.regexSymbols, ""), countryToString);
+
+            System.out.println("\nCircuit ID: " + jPath.getString("MRData.CircuitTable.Circuits.circuitId").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Circuit Name: " + jPath.getString("MRData.CircuitTable.Circuits.circuitName").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Latitude: " + jPath.getString("MRData.CircuitTable.Circuits.Location.lat").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Longitude: " + jPath.getString("MRData.CircuitTable.Circuits.Location.long").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Location's Locality: " + jPath.getString("MRData.CircuitTable.Circuits.Location.locality").replaceAll(regexStringsObj.regexSymbols, ""));
+            System.out.println("Country: " + jPath.getString("MRData.CircuitTable.Circuits.Location.country").replaceAll(regexStringsObj.regexSymbols, ""));
+
+        } // end for-loop
+
+    } // end method testCircuitsResponseCode
 
 } // end class GetData
